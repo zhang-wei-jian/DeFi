@@ -48,3 +48,6 @@ After modifying the `.npmrc` file, you need to run `pnpm install` again to ensur
 ## License
 
 Licensed under the [MIT license](https://github.com/nextui-org/vite-template/blob/main/LICENSE).
+
+替换main文件区块链地址
+替换index文件智能合约地址

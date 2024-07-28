@@ -6,3 +6,5 @@
 
 *.key
 *.key.pub
+node_modules
+npm-debug.log

@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 
@@ -12,13 +12,13 @@ import {
   RainbowKitProvider, Chain,
 } from '@rainbow-me/rainbowkit';
 import { WagmiProvider } from 'wagmi';
-import {
-  mainnet,
-  polygon,
-  optimism,
-  arbitrum,
-  base,
-} from 'wagmi/chains';
+// import {
+//   mainnet,
+//   polygon,
+//   optimism,
+//   arbitrum,
+//   base,
+// } from 'wagmi/chains';
 import {
   QueryClientProvider,
   QueryClient,
@@ -40,11 +40,11 @@ const avalanche = {
   nativeCurrency: { name: 'Ethereum', symbol: 'ETH', decimals: 18 },
   rpcUrls: {
     // default: { http: ['http://127.0.0.1:8545'] },
-    default: { http: ['http://192.168.31.64:8545'] },
+    default: { http: ['http://aisuperhero.xyz:8545'] },
   },
   blockExplorers: {
     // default: { name: 'Localhost Explorer', url: 'http://localhost:8545' },
-    default: { name: 'Localhost Explorer', url: 'http://192.168.31.64:8545' },
+    default: { name: 'Localhost Explorer', url: 'http://aisuperhero.xyz:8545' },
   },
   contracts: {
     multicall3: {

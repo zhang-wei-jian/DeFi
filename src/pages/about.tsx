@@ -1,4 +1,4 @@
-import { title } from "@/components/primitives";
+// import { title } from "@/components/primitives";
 import DefaultLayout from "@/layouts/default";
 import { zwjTokenContractConfig, exChangeContractConfig } from "@/config/ContractConfig";
 import { Card, CardBody } from "@nextui-org/react";

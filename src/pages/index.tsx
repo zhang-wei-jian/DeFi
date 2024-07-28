@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useEffect, useState } from "react";
 import { Card, CardBody, CardFooter, Image, Input, Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, getKeyValue, Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 import DefaultLayout from "@/layouts/default";
@@ -19,8 +20,17 @@ export default function IndexPage() {
   const { isOpen: isOpenApprove, onOpen: onOpenApprove, onClose: onCloseApprove, onOpenChange: onOpenChangeApprove } = useDisclosure();
 
 
-  const [orderList, setOrderList] = useState([]);
-  const [fillOrderList, setFillOrderList] = useState([]);
+  type TypeOrder = {
+    id: number,
+    userAddress: any,
+    tokenGet: any,
+    amountGet: string,
+    tokenGive: any,
+    amountGive: string,
+    timestamp: any,
+  }
+  const [orderList, setOrderList] = useState<TypeOrder[]>([]);
+  const [fillOrderList, setFillOrderList] = useState<TypeOrder[]>([]);
 
   const columns = [
     // {
@@ -340,6 +350,7 @@ export default function IndexPage() {
     // 获取所有取消的订单事件日志
     const cancelledOrdersFilter = contract.filters.Cancel();
     const cancelledOrdersLogs = await contract.queryFilter(cancelledOrdersFilter);
+
     const cancelledOrdersList = cancelledOrdersLogs.map(log => Number(contract.interface.parseLog(log).args.id));
 
 
@@ -961,15 +972,17 @@ export default function IndexPage() {
 
 //   return (<span> {balance?.toString()}</span>)
 // }
-async function ReadEthBalance() {
 
-  const provider = useEthersProvider()
-  const balance = await provider.getBalance("0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266")
-  return (
-    <span>{(balance?.toString())}</span>
 
-  )
-}
+// async function ReadEthBalance() {
+
+//   const provider = useEthersProvider()
+//   const balance = await provider.getBalance("0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266")
+//   return (
+//     <span>{(balance?.toString())}</span>
+
+//   )
+// }
 
 
 // function ReadExchangeEthContract() {
@@ -990,13 +1003,13 @@ async function ReadEthBalance() {
 // }
 
 
-const getUser = async () => {
-  const provider = useEthersProvider()
-  const signer = useEthersSigner()
+// const getUser = async () => {
+//   const provider = useEthersProvider()
+//   const signer = useEthersSigner()
 
-  console.log("blance!!", await provider.getBalance("0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"));
+//   console.log("blance!!", await provider.getBalance("0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"));
 
-  console.log("address", signer?.address);
+//   console.log("address", signer?.address);
 
 
-}
+// }
